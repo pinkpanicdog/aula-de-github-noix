@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema Simples</title>
+    <style>
+      :root {
+        --bg: #f5f2ea;
+        --ink: #1b1a17;
+        --muted: #6a6157;
+        --accent: #1f6f5b;
+        --card: #fffdf8;
+        --border: #e2d8c7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: var(--ink);
+        background: radial-gradient(
+          circle at 10% 10%,
+          #fff7e6 0%,
+          var(--bg) 50%,
+          #efe7d8 100%
+        );
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 32px;
+        letter-spacing: 0.5px;
+      }
+
+      header p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        box-shadow: 0 10px 24px rgba(27, 26, 23, 0.08);
+      }
+
+      .card h2 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        color: var(--accent);
+      }
+
+      .list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .list li {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px 12px;
+        background: #ffffff;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+
+      .label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 4px;
+      }
+
+      .value {
+        font-size: 15px;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <h1>Sistema simples</h1>
+        <p>Edite os arquivos .js para atualizar as informacoes em segundos.</p>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Usuarios</h2>
+          <ul id="users" class="list"></ul>
+        </div>
+
+        <div class="card">
+          <h2>Produtos</h2>
+          <ul id="products" class="list"></ul>
+        </div>
+
+        <div class="card">
+          <h2>Pedidos</h2>
+          <ul id="orders" class="list"></ul>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/pedidos.js"></script>
+  <script src="/usuarios.js"></script>
+  <script src="/produtos.js"></script>
+</html>
